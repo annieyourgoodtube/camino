@@ -689,6 +689,9 @@ body {
 
 <!-- Nav -->
 <nav class="route-nav" id="routeNav">
+  <a class="route-btn" href="https://www.google.com/maps/d/edit?mid=1cWnvu-wNOrBtjbZdWhs0kJJQ2lfeSl4&usp=sharing" target="_blank" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">
+    🗺️ 中央之路地圖
+  </a>
   <button class="route-btn" data-day="pack">
     🎒 行李清單
   </button>
@@ -760,7 +763,7 @@ body {
       <div class="day-hero-eyebrow">10月17日（六）· 抵達日</div>
       <div class="day-hero-route">波多 ✈ 圖伊（Tui）</div>
       <div class="day-hero-meta">
-        <span>🚕 計程車 106.75€</span>
+        <span>🚕 機場接送至飯店車資約 106.75€</span>
         <span>🏛 朝聖者護照</span>
         <span>🛒 必須補給日</span>
       </div>
@@ -2447,13 +2450,13 @@ const packData = {
     { name: '涼鞋', note: '抵達飯店後讓腳透氣休息', icon: '👡' },
     { name: '步行長褲 × 2', note: '快乾材質，一穿一洗', icon: '👖' },
     { name: '短褲 × 1', note: '天熱備用', icon: '🩳' },
-    { name: '排汗T恤 × 3', note: '快乾、輕量', icon: '👕' },
+    { name: '排汗T恤 × 2', note: '快乾、輕量', icon: '👕' },
     { name: '長袖排汗衫 × 1', note: '清晨出發時穿', icon: '👔' },
     { name: '防水外套（亮色）', note: '加利西亞10月必備', icon: '🧥', important: true },
     { name: '排汗內衣 × 3', note: '快乾材質', icon: '👙' },
-    { name: '排汗內褲 × 3', note: '快乾，避免棉質', icon: '🩲' },
-    { name: '厚羊毛襪 × 3雙', note: '防水泡最重要！', icon: '🧦', important: true },
-    { name: '薄襪 × 2雙', note: '穿在厚羊毛襪裡雙層防護', icon: '🧦' },
+    { name: '拋棄式內褲 × 5件', note: '用完即丟，減輕洗衣負擔', icon: '🩲', important: true },
+    { name: '五指羊毛襪 × 3雙', note: '五指設計防水泡最有效！', icon: '🧦', important: true },
+    { name: '薄襪 × 2雙', note: '穿在羊毛襪裡雙層防護', icon: '🧦' },
     { name: '太陽眼鏡', note: '', icon: '🕶️' },
     { name: '帽子（遮陽/防雨）', note: '', icon: '🧢' },
     { name: '頭巾或薄圍巾', note: '保暖兼防曬', icon: '🧣' },
@@ -2463,8 +2466,9 @@ const packData = {
     { name: '透氣膠布', note: '預防性貼腳趾', icon: '🩹' },
     { name: '消炎止痛藥', note: 'Ibuprofen / 普拿疼', icon: '💊', important: true },
     { name: '腸胃藥', note: '止瀉、消脹氣', icon: '💊' },
+    { name: '止瀉藥 × 3', note: '腸胃不適緊急備用', icon: '💊', important: true },
     { name: '感冒藥', note: '', icon: '💊' },
-    { name: '抗組織胺', note: '過敏備用', icon: '💊' },
+    { name: '防床蟲噴霧 / 藥', note: '庇護所或民宿備用，噴行李與床邊', icon: '🪲', important: true },
     { name: '肌肉痠痛貼布', note: 'Voltaren / 痠痛貼', icon: '🧴' },
     { name: '碘伏消毒棉片', note: '傷口消毒', icon: '🩹' },
     { name: '壓力小腿襪', note: '促進血液循環、預防腿部腫脹，長距離必備', icon: '🧦', important: true },
@@ -2495,12 +2499,12 @@ const packData = {
     { name: '護唇膏', note: '風大容易乾裂', icon: '💄' },
     { name: '護手霜', note: '', icon: '🧴' },
     { name: '保濕面霜', note: '', icon: '🧴' },
-    { name: '個人衛生用品', note: '', icon: '🌸' },
+    { name: '衛生棉 × 12片', note: '備足整趟旅程所需', icon: '🌸', important: true },
     { name: '濕紙巾 × 2包', note: '隨時擦臉補給站用', icon: '🧻' },
     { name: '口罩 × 10片+', note: '飛機、機場、人潮密集處', icon: '😷' },
     { name: '防水衣物袋', note: '分裝乾/濕衣物', icon: '🛍️' },
-    { name: '洗衣精小包 × 3', note: '手洗備用', icon: '🧺' },
-    { name: '指甲剪', note: '長指甲易起水泡', icon: '✂️', important: true },
+    { name: '洗衣球 + 洗衣精小包', note: '洗衣球省空間，洗衣精備手洗用', icon: '🧺' },
+    { name: '夾鏈袋（大中小各2）', note: '分裝藥品、零食、濕衣物超好用', icon: '🗂️' },
   ],
   '🐚 朝聖裝備': [
     { name: '朝聖者護照 Credential', note: '圖伊大教堂購買 €2', icon: '📒', important: true },
@@ -2528,6 +2532,13 @@ const packData = {
     { name: '計程車預約確認', note: 'Airports Taxi EUR 106.75', icon: '🚕' },
     { name: '緊急聯絡清單', note: '台灣代表處、保險公司', icon: '📞' },
     { name: '西班牙 eSIM / SIM卡', note: '先在台灣買好', icon: '📶', important: true },
+  ],
+  '🇹🇼 台灣名產（伴手禮）': [
+    { name: '鳳梨酥（小包裝）', note: '送給路上遇到的朝聖者、飯店工作人員', icon: '🍍', important: true },
+    { name: '台灣茶包', note: '輕薄好攜帶，泡茶分享最暖心', icon: '🍵' },
+    { name: '牛軋糖 / 太陽餅', note: '獨立小包裝，分送方便', icon: '🍬' },
+    { name: '台灣明信片 × 10張', note: '寫上祝福送給朝聖路上的朋友', icon: '📮' },
+    { name: '台灣造型小磁鐵', note: '輕量紀念品，適合交換', icon: '🧲' },
   ],
 };
 
@@ -2579,6 +2590,52 @@ function togglePack(name) {
   try { localStorage.setItem('packChecked', JSON.stringify(packChecked)); } catch(e) {}
   renderPackPage();
 }
+
+// ═══════════════════════════════
+// 導航提示框：每天對應起點座標的地圖連結
+// ═══════════════════════════════
+const dayMapLinks = {
+  '0': { label: '波多機場 → 圖伊', ll: '41.9653,-8.6477', z: 12 },
+  '1': { label: 'Day 1 圖伊 → 維拉波', ll: '42.0440,-8.6432', z: 13 },
+  '2': { label: 'Day 2 維拉波 → 雷東德拉', ll: '42.2378,-8.6281', z: 13 },
+  '3': { label: 'Day 3 雷東德拉 → 龐特維德拉', ll: '42.3130,-8.6094', z: 13 },
+  '4': { label: 'Day 4 龐特維德拉 → 卡爾達斯', ll: '42.4337,-8.6480', z: 13 },
+  '5': { label: 'Day 5 卡爾達斯 → 帕德隆', ll: '42.6019,-8.6444', z: 13 },
+  '6': { label: 'Day 6 帕德隆 → 聖地牙哥', ll: '42.7417,-8.6574', z: 13 },
+};
+
+document.querySelectorAll('.day-section').forEach(section => {
+  const hero = section.querySelector('.day-hero');
+  if (!hero) return;
+  const dayId = section.id.replace('day-', '');
+  const info = dayMapLinks[dayId] || dayMapLinks['0'];
+  const mapUrl = `https://www.google.com/maps/d/viewer?mid=1cWnvu-wNOrBtjbZdWhs0kJJQ2lfeSl4&ll=${info.ll}&z=${info.z}`;
+
+  const navTipHTML = `
+  <div style="margin-bottom:16px; border-radius:12px; overflow:hidden; border:1px solid #b8d4e8; box-shadow:0 2px 12px rgba(30,26,20,0.08);">
+    <div style="background:#1a4a6e; color:#fff; padding:10px 16px; font-size:13px; font-weight:500;">
+      🧭 今日導航三步驟
+    </div>
+    <div style="background:#e8f4fd; padding:14px 16px; font-size:13px; line-height:2;">
+      <div>① <strong>跟著黃色箭頭 ➜</strong> — 全段每隔幾百公尺就有路標，最可靠</div>
+      <div>② <strong>Wise Pilgrim App</strong> — 離線也能用，顯示標準朝聖路線</div>
+      <div>③ <strong>確認大方向</strong> — 點下方按鈕，地圖自動定位到今日起點</div>
+    </div>
+    <div style="background:#fff; padding:12px 16px;">
+      <a href="${mapUrl}" target="_blank"
+        style="display:inline-flex; align-items:center; gap:8px; background:#1a4a6e; color:#fff;
+               padding:11px 20px; border-radius:8px; font-size:13px; font-weight:600;
+               text-decoration:none; box-shadow:0 2px 8px rgba(26,74,110,0.25);">
+        🗺️ ${info.label} 路線圖
+      </a>
+    </div>
+    <div style="background:var(--parchment-dark); padding:7px 16px; font-size:11px; color:var(--ink-muted);">
+      💡 建議出發前截圖今日路線，以備沒有網路時使用
+    </div>
+  </div>`;
+
+  hero.insertAdjacentHTML('afterend', navTipHTML);
+});
 
 // Tab navigation
 document.querySelectorAll('.route-btn').forEach(btn => {
