@@ -692,6 +692,9 @@ body {
   <a class="route-btn" href="https://www.google.com/maps/d/edit?mid=1cWnvu-wNOrBtjbZdWhs0kJJQ2lfeSl4&usp=sharing" target="_blank" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">
     🗺️ 中央之路地圖
   </a>
+  <button class="route-btn" data-day="cost">
+    💰 住宿費用
+  </button>
   <button class="route-btn" data-day="pack">
     🎒 行李清單
   </button>
@@ -729,7 +732,32 @@ body {
 
 <!-- Main -->
 
-  <!-- ═══ PACKING PAGE ═══ -->
+  <!-- ═══ COST PAGE ═══ -->
+  <div id="costPage" style="display:none; padding:20px 16px 80px;">
+    <div style="max-width:600px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="font-family:'Lora',serif; font-size:22px; font-weight:600; color:var(--ink);">💰 住宿費用總覽</div>
+        <div style="font-size:13px; color:var(--ink-muted); margin-top:4px;">Annie & Kevin · 2026年10月17–25日</div>
+      </div>
+
+      <!-- 每晚住宿卡片 -->
+      <div id="costCards"></div>
+
+      <!-- 總計 -->
+      <div style="background:var(--ink); color:var(--parchment); border-radius:14px; padding:20px; margin-top:8px; text-align:center;">
+        <div style="font-size:13px; opacity:0.7; margin-bottom:6px;">7 晚住宿總計</div>
+        <div style="font-family:'Lora',serif; font-size:32px; font-weight:600; color:var(--camino-gold);">TWD 27,729</div>
+        <div style="font-size:12px; opacity:0.6; margin-top:6px;">平均每晚約 TWD 3,961</div>
+      </div>
+
+      <div style="background:var(--parchment-dark); border-radius:12px; padding:14px 16px; margin-top:12px; font-size:12px; color:var(--ink-muted); line-height:1.8;">
+        💡 <strong>注意：</strong>以上費用均為住宿費，不含餐費、交通、景點門票等其他支出。<br>
+        🚕 機場接送：TWD 約 3,200（EUR 106.75）<br>
+        ✈️ 機票費用另計
+      </div>
+    </div>
+  </div>
+
   <div id="packingPage" style="display:none">
     <div class="pack-print-page" id="packContainer"></div>
   </div>
@@ -804,7 +832,12 @@ body {
       <div class="info-row">
         <div class="info-icon">☕</div>
         <div class="info-label">早餐</div>
-        <div class="info-val"><strong>自助廚房</strong>，公寓備有冰箱、微波爐。房東通常會留咖啡膠囊、水、麵包等基本食材。<span class="badge-warn">無早餐服務</span></div>
+        <div class="info-val"><strong>含早餐 ✅</strong>，公寓廚房備有咖啡膠囊、麵包、果汁等基本食材，可自行準備</div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🕐</div>
+        <div class="info-label">早餐時間</div>
+        <div class="info-val">自由享用，出發前在公寓廚房自行準備即可</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🕐</div>
@@ -1117,7 +1150,7 @@ body {
       <div class="info-row">
         <div class="info-icon">🕐</div>
         <div class="info-label">早餐時間</div>
-        <div class="info-val"><em>約 07:00–10:00</em>（出發日建議 07:00 開吃）<span class="badge-warn">建議確認確切時間</span></div>
+        <div class="info-val"><em>平日 07:00–10:30 ／ 週末 08:00–11:00</em>（10/19 週日出發，建議 08:00 吃早餐）</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🕐</div>
@@ -1331,31 +1364,26 @@ body {
     </div>
 
     <div class="info-card">
-      <div class="info-card-title">🍳 As Chivas 早餐 & 資訊</div>
+      <div class="info-card-title">🍳 埃斯芝瓦士鄉村民宿 早餐 & 資訊</div>
       <div class="info-row">
         <div class="info-icon">☕</div>
         <div class="info-label">早餐</div>
-        <div class="info-val"><strong>含在房價內</strong> ✓ 加利西亞在地農產品早餐<br>果汁、咖啡／茶、吐司、麵包、冷盤、優格、糕點、水果</div>
+        <div class="info-val"><strong>含在房價內 ✅</strong> 加利西亞在地農產品早餐<br>咖啡／茶、吐司麵包、果醬、冷盤、水果</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🕐</div>
         <div class="info-label">早餐時間</div>
-        <div class="info-val"><em>08:00–11:00</em> 在俯瞰松林的露台享用 🌲</div>
+        <div class="info-val"><em>約 07:30–09:30</em>（建議早吃，Day 3 路段較長）</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🕐</div>
         <div class="info-label">入住/退房</div>
-        <div class="info-val">入住 15:00–20:00 ／ 退房 11:00 前</div>
-      </div>
-      <div class="info-row">
-        <div class="info-icon">🚕</div>
-        <div class="info-label">朝聖者接送</div>
-        <div class="info-val">提供付費計程車接送：從 Redondela 鎮或 Arcade 接送，隔天早上送回原地繼續走</div>
+        <div class="info-val">入住 15:00 後 ／ 退房 11:00 前</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🧺</div>
         <div class="info-label">設施</div>
-        <div class="info-val">洗衣機 ✓ ／ 行李寄放 ✓ ／ Wi-Fi ✓ ／ 花園 ✓</div>
+        <div class="info-val">Wi-Fi ✓ ／ 步行可達雷東德拉市區 ✓</div>
       </div>
     </div>
     <div class="info-card">
@@ -1388,10 +1416,10 @@ body {
     <div class="hotel-card">
       <div class="hotel-icon">🏡</div>
       <div>
-        <div class="hotel-name">As Chivas（夢幻民宿）</div>
-        <div class="hotel-location">📍 雷東德拉 (Redondela)，山坡上</div>
-        <div class="hotel-desc">由古老石屋改建，位於山坡上，擁有俯瞰維戈灣的絕美露台。整趟旅程最夢幻的午後。⚠️ 進城時先去超市再上坡！</div>
-        <a class="hotel-map-btn" href="https://www.google.com/maps/search/As+Chivas+Redondela" target="_blank">📍 Google 地圖導航</a>
+        <div class="hotel-name">埃斯芝瓦士鄉村民宿</div>
+        <div class="hotel-location">📍 雷東德拉 (Redondela)，TWD 2,295 · ✅ 已確認</div>
+        <div class="hotel-desc">溫馨鄉村民宿風格，位於朝聖路線上，雷東德拉是中央路與海岸路匯合的關鍵小鎮，以兩座壯觀鐵路橋聞名。步行可達市區超市與餐廳。</div>
+        <a class="hotel-map-btn" href="https://www.google.com/maps/search/埃斯芝瓦士+Redondela+Spain" target="_blank">📍 Google 地圖導航</a>
       </div>
     </div>
   </section>
@@ -1579,12 +1607,12 @@ body {
       <div class="info-row">
         <div class="info-icon">☕</div>
         <div class="info-label">早餐</div>
-        <div class="info-val">早餐供應中 <span class="badge-warn">建議訂房時確認是否含在房價</span><br>加利西亞鄉村風格早餐，在花園內享用</div>
+        <div class="info-val"><strong>含在房價內 ✅</strong> Buffet 自助早餐，在花園內享用<br>加利西亞鄉村風格，含麵包、火腿、乳酪、新鮮果汁、咖啡</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🕐</div>
         <div class="info-label">早餐時間</div>
-        <div class="info-val"><em>約 07:30–10:00</em>（出發日建議儘早，龐特維德拉→卡爾達斯 22km）</div>
+        <div class="info-val"><em>08:00–11:00</em>（出發日建議 08:00 吃，Day 4 龐特維德拉→卡爾達斯 22km）</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🕐</div>
@@ -1633,9 +1661,9 @@ body {
       <div class="hotel-icon">🌿</div>
       <div>
         <div class="hotel-name">Hotel Rural Campaniola</div>
-        <div class="hotel-location">📍 龐特維德拉 (Pontevedra) 市郊</div>
-        <div class="hotel-desc">田園放鬆！位於大城市邊緣的鄉村旅館，環境安靜設有綠地花園。⚠️ 先在市中心超市買好東西再過來。</div>
-        <a class="hotel-map-btn" href="https://www.google.com/maps/search/Rural+Campaniola+Pontevedra+Spain" target="_blank">📍 Google 地圖導航</a>
+        <div class="hotel-location">📍 龐特維德拉市郊 Campañó 山谷，TWD 3,732 · ✅ 已確認</div>
+        <div class="hotel-desc">朝聖路上的綠洲！3,600㎡莊園式鄉村旅館，設有兩座戶外泳池、SPA、餐廳（加利西亞料理）。朝聖者最愛的休息地，提供免費腳踏車租借，離龐特維德拉市中心約5分鐘。⚠️ 先在市中心買好補給再來。</div>
+        <a class="hotel-map-btn" href="https://www.google.com/maps/search/Hotel+Rural+Campaniola+Pontevedra+Spain" target="_blank">📍 Google 地圖導航</a>
       </div>
     </div>
   </section>
@@ -1807,16 +1835,16 @@ body {
     </div>
 
     <div class="info-card">
-      <div class="info-card-title">🍳 Alma Candida 早餐 & 資訊</div>
+      <div class="info-card-title">🍳 Hotel Roquiño 早餐 & 資訊</div>
       <div class="info-row">
         <div class="info-icon">☕</div>
         <div class="info-label">早餐</div>
-        <div class="info-val">早餐供應中 <span class="badge-warn">建議訂房確認是否含在房價</span><br>評價極高（9.5分），質感簡約早餐</div>
+        <div class="info-val"><strong>含在房價內 ✅</strong> 前一晚勾選菜單（€9 吃到飽）<br>可頌、水果、現榨橙汁、加利西亞火腿、乳酪、蛋類、咖啡</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🕐</div>
         <div class="info-label">早餐時間</div>
-        <div class="info-val"><em>約 07:30–10:30</em>（建議出發前飽食，Day 5 路段前半無補給點）</div>
+        <div class="info-val"><em>平日 07:00–10:00 ／ 週末 07:30–10:30</em>（10/22 週三，建議 07:00 出發前吃飽，Day 5 前段無補給）</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🕐</div>
@@ -1826,7 +1854,7 @@ body {
       <div class="info-row">
         <div class="info-icon">🧺</div>
         <div class="info-label">設施</div>
-        <div class="info-val">鎮中心位置 ✓ ／ 溫泉區步行可達 ✓ ／ Wi-Fi ✓</div>
+        <div class="info-val">鎮中心位置 ✓ ／ 溫泉廣場步行2分鐘 ✓ ／ 餐廳 ✓ ／ Wi-Fi ✓</div>
       </div>
     </div>
     <div class="info-card">
@@ -1880,12 +1908,12 @@ body {
     </div>
     <div class="section-title">🏨 今晚住宿</div>
     <div class="hotel-card">
-      <div class="hotel-icon">✨</div>
+      <div class="hotel-icon">🏨</div>
       <div>
-        <div class="hotel-name">Alma Candida</div>
-        <div class="hotel-location">📍 卡爾達斯德雷伊斯 (Caldas de Reis)，溫泉區</div>
-        <div class="hotel-desc">評價 9.5 分以上的現代設計感飯店，簡約有質感。位於鎮中心，轉角就有小店補給非常方便。</div>
-        <a class="hotel-map-btn" href="https://www.google.com/maps/search/Alma+Candida+Caldas+de+Reis+Spain" target="_blank">📍 Google 地圖導航</a>
+        <div class="hotel-name">Hotel Roquiño</div>
+        <div class="hotel-location">📍 卡爾達斯德雷伊斯 (Caldas de Reis) 市中心，TWD 4,433 · ✅ 已確認</div>
+        <div class="hotel-desc">朝聖者最推薦！評價 9.1 分，位於鎮中心朝聖路上，走路到溫泉廣場、羅馬橋、教堂全部2分鐘內。餐廳提供頂級加利西亞料理，早餐可前一晚勾選菜單（€9吃到飽）。部分房型有露台。</div>
+        <a class="hotel-map-btn" href="https://www.google.com/maps/search/Hotel+Roquino+Caldas+de+Reis+Spain" target="_blank">📍 Google 地圖導航</a>
       </div>
     </div>
 
@@ -2080,7 +2108,7 @@ body {
       <div class="info-row">
         <div class="info-icon">☕</div>
         <div class="info-label">早餐</div>
-        <div class="info-val"><strong>含在房價內</strong> ✓ 莊園風格早餐<br>葡萄園環境，在石砌餐廳享用，含當地果醬、麵包</div>
+        <div class="info-val"><strong>含在房價內 ✅</strong> Premium à la carte 早餐<br>酪梨吐司、班尼迪克蛋、自製烘焙麵包糕點、每日不同菜單</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🕐</div>
@@ -2327,7 +2355,7 @@ body {
       <div class="info-row">
         <div class="info-icon">☕</div>
         <div class="info-label">早餐</div>
-        <div class="info-val">大陸式早餐 <strong>每日供應</strong>（確認是否含在房價）<br>可頌、水果、橙汁（現榨）、Santiago 傳統蛋糕、咖啡、冷盤</div>
+        <div class="info-val"><strong>含在房價內 ✅</strong> 大陸式早餐，服務生桌邊服務（非自助）<br>可頌、新鮮水果、現榨橙汁、Santiago 傳統蛋糕、咖啡、加利西亞麵包佐橄欖油</div>
       </div>
       <div class="info-row">
         <div class="info-icon">🕐</div>
@@ -2637,8 +2665,108 @@ document.querySelectorAll('.day-section').forEach(section => {
   hero.insertAdjacentHTML('afterend', navTipHTML);
 });
 
+// ═══════════════════════════════
+// COST PAGE
+// ═══════════════════════════════
+const costData = [
+  {
+    day: '抵達日', date: '10/17–18',
+    hotel: 'Castellum Tude Apartamento', location: '圖伊老城區 R. Ordóñez, 10', twd: 3063, icon: '🏠',
+    features: '老城區公寓，內含廚房、洗衣機、陽台，距大教堂步行1分鐘，房東暖心備有咖啡、麵包等食材，是整趟最有家感的住宿',
+    breakfast: '⭐⭐⭐⭐ 公寓廚房自備早餐，房東通常預留咖啡膠囊、麵包、果汁，旅客評價溫馨舒適，自由時間享用',
+    dinner: '🍽️ 飯店無餐廳，步行5分鐘內有多家圖伊老城區餐廳，推薦加利西亞海鮮料理，第一晚犒賞自己！',
+    laundry: '🧺 Lavalux Tui｜Av. da Concordia 85 Bajo｜步行約8分鐘｜08:30–23:30 每天開放',
+  },
+  {
+    day: 'Day 1', date: '10/18–19',
+    hotel: 'Hotel San Luis', location: '維拉波 (Vilaboa)，臨海 Arcade 漁村', twd: 2826, icon: '🏨',
+    features: '位於維戈灣畔，俯瞰海景，有屋頂露台、花園、桑拿、朝聖者腳踏車停放區，環境靜謐，當地生蠔聞名',
+    breakfast: '⭐⭐⭐⭐ Buffet含早餐，「豐盛又方便，有新鮮水果、水煮蛋、多種選擇，朝聖者補充體力首選」。平日07:00–10:30 / 週日08:00–11:00',
+    dinner: '🍽️ 飯店附設餐廳評價佳，「牛排套餐約€15，新鮮海鮮料理，份量超大」；也可步行至 Arcade 鎮品嚐當地生蠔',
+    laundry: '🧺 飯店內設有洗衣設施（自助洗衣）｜直接在飯店使用，無需外出',
+  },
+  {
+    day: 'Day 2', date: '10/19–20',
+    hotel: '埃斯芝瓦士鄉村民宿', location: '雷東德拉 (Redondela)', twd: 2295, icon: '🏡',
+    features: '溫馨鄉村民宿，位於朝聖路線上，雷東德拉是中央路與海岸路的交匯點，鎮內有兩座壯觀鐵路橋，服務親切',
+    breakfast: '⭐⭐⭐⭐ 含早餐，加利西亞在地食材，咖啡、麵包、冷盤，「朝聖者評價方便親切，早上補充能量出發」。約07:30–09:30',
+    dinner: '🍽️ 步行可達 DeCalle（Camino 沿線口碑最佳之一）或 Barraca de Freddy，加利西亞料理豐盛實惠',
+    laundry: '🧺 Venlavar Lavandería Autoservicio Redondela｜市區步行可達｜Auga&Xabón 品牌發跡地，全週開放',
+  },
+  {
+    day: 'Day 3', date: '10/20–21',
+    hotel: 'Hotel Rural Campaniola', location: '龐特維德拉市郊 Campañó 山谷', twd: 3732, icon: '🌿',
+    features: '3,600㎡莊園旅館，兩座戶外泳池（大人+兒童）、SPA水療、Jacuzzi、免費腳踏車，朝聖路上最佳恢復基地',
+    breakfast: '⭐⭐⭐⭐⭐ Buffet早餐評價極高，「在花園中享用，服務員親切，食物豐盛，值得早起慢慢吃」。08:00–11:00',
+    dinner: '🍽️ 飯店附設 Lavandeiras 餐廳強烈推薦，「加利西亞傳統料理出色，魚料理鮮美，份量超大，服務熱情」',
+    laundry: '🧺 龐特維德拉市區多家洗衣店｜騎飯店免費腳踏車約5分鐘至市區｜Lavalux Av. Eduardo Pondal 56',
+  },
+  {
+    day: 'Day 4', date: '10/21–22',
+    hotel: 'Hotel Roquiño', location: '卡爾達斯德雷伊斯市中心', twd: 4433, icon: '♨️',
+    features: '評分9.1，位於朝聖路線心臟，步行2分鐘達溫泉廣場、羅馬橋、聖托瑪斯教堂，多語言員工，部分房型有小露台',
+    breakfast: '⭐⭐⭐⭐⭐ 前晚勾選菜單€9吃到飽，「整趟Camino最好的早餐！員工超親切，可頌酥脆，蛋類現做，讓人捨不得離開」。07:00–10:00',
+    dinner: '🍽️ 飯店餐廳 A Do Borlo 強烈推薦，「新鮮海魚一流，Albariño白酒絕配，料理有水準但價格親民，朝聖者必吃！」',
+    laundry: '🧺 Auga&Xabón Caldas de Reis｜Rúa Xoan Fuentes Echevarría 28｜步行約3分鐘｜評分4.6★｜洗€4 / 烘€2，含洗衣粉',
+  },
+  {
+    day: 'Day 5', date: '10/22–23',
+    hotel: 'Pazo Arretén', location: '帕德隆葡萄園莊園', twd: 4695, icon: '🏰',
+    features: '16世紀貴族莊園，葡萄園環繞，含砲塔、禮拜堂、石砌迴廊，附設米其林一星餐廳 Asador O\'Pazo，終極浪漫一晚',
+    breakfast: '⭐⭐⭐⭐⭐ Premium à la carte早餐，「每天菜單不同，酪梨吐司、班尼迪克蛋、自製糕點，完全不像普通飯店」。07:30–09:30',
+    dinner: '🍽️ 莊園晚餐 Night Brunch：聖費利佩鯷魚、Joselito火腿等精選，氣氛極浪漫。⚠️ 需提前預約！米其林一星 Asador O\'Pazo 需另訂位',
+    laundry: '🧺 帕德隆鎮中心洗衣店｜步行約20分鐘或計程車約5分鐘｜建議進鎮補給時順便洗好，莊園無洗衣服務',
+  },
+  {
+    day: 'Day 6', date: '10/23–25',
+    hotel: '赫拉杜拉酒店 (Hotel Herradura)', location: '聖地牙哥老城區，Alameda公園旁', twd: 6741, icon: '🏆',
+    features: '歷史建築列管古蹟，木石裝飾充滿加利西亞風情，距大教堂步行7分鐘，24小時咖啡廳，有鋼琴音樂吧',
+    breakfast: '⭐⭐⭐⭐ 桌邊服務式大陸式早餐，「服務生記住常客喜好，Santiago蛋糕＋現榨橙汁是亮點，溫馨像家」。08:00–10:30',
+    dinner: '🍽️ 飯店無正式餐廳，步行5分鐘有大量選擇。推薦 A Taboa de Picar（融合料理，150m外）或老城區隨意探索',
+    laundry: '🧺 Lavandería Hortas 10（最推薦！）｜Rúa das Hortas 10｜步行約6分鐘｜07:00–23:00｜石砌庭院可休息，全城最美洗衣店',
+  },
+];
+
+function renderCostPage() {
+  const container = document.getElementById('costCards');
+  if (!container) return;
+  let html = '';
+  costData.forEach(item => {
+    html += `
+    <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:16px; margin-bottom:12px; display:flex; gap:14px; align-items:flex-start; box-shadow:0 2px 8px rgba(30,26,20,0.06);">
+      <div style="font-size:28px; flex-shrink:0; margin-top:2px;">${item.icon}</div>
+      <div style="flex:1; min-width:0;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; flex-wrap:wrap;">
+          <div>
+            <div style="font-size:11px; color:var(--ink-muted); font-weight:500;">${item.day} · ${item.date}</div>
+            <div style="font-family:'Lora',serif; font-size:15px; font-weight:600; color:var(--pilgrim-red); margin-top:2px;">${item.hotel}</div>
+            <div style="font-size:12px; color:var(--ink-soft); margin-top:1px;">📍 ${item.location}</div>
+          </div>
+          <div style="text-align:right; flex-shrink:0;">
+            <div style="font-size:18px; font-weight:700; color:var(--camino-gold);">TWD ${item.twd.toLocaleString()}</div>
+            <div style="font-size:10px; color:var(--ink-muted);">✅ 已確認</div>
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:12px; color:var(--ink-muted); background:var(--parchment); border-radius:8px; padding:8px 10px; line-height:1.6;">
+          ✨ ${item.features}
+        </div>
+        <div style="margin-top:6px; font-size:12px; background:#fdf3e0; color:#5a3e00; border-radius:8px; padding:8px 10px; line-height:1.6;">
+          ☕ <strong>早餐：</strong>${item.breakfast}
+        </div>
+        <div style="margin-top:6px; font-size:12px; background:#f5e8ea; color:#6b1020; border-radius:8px; padding:8px 10px; line-height:1.6;">
+          ${item.dinner}
+        </div>
+        <div style="margin-top:6px; font-size:12px; background:#e6f0e9; color:#2d5a3d; border-radius:8px; padding:8px 10px; line-height:1.6;">
+          ${item.laundry}
+        </div>
+      </div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
 // Tab navigation
-document.querySelectorAll('.route-btn').forEach(btn => {
+document.querySelectorAll('.route-btn[data-day]').forEach(btn => {
   btn.addEventListener('click', () => {
     const day = btn.dataset.day;
     document.querySelectorAll('.route-btn').forEach(b => b.classList.remove('active'));
@@ -2647,10 +2775,18 @@ document.querySelectorAll('.route-btn').forEach(btn => {
     if (day === 'pack') {
       document.querySelectorAll('.day-section').forEach(s => s.classList.remove('active'));
       document.getElementById('packingPage').style.display = 'block';
+      document.getElementById('costPage').style.display = 'none';
       document.querySelector('.main').style.padding = '0';
       renderPackPage();
+    } else if (day === 'cost') {
+      document.querySelectorAll('.day-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('packingPage').style.display = 'none';
+      document.getElementById('costPage').style.display = 'block';
+      document.querySelector('.main').style.padding = '0';
+      renderCostPage();
     } else {
       document.getElementById('packingPage').style.display = 'none';
+      document.getElementById('costPage').style.display = 'none';
       document.querySelector('.main').style.padding = '';
       document.querySelectorAll('.day-section').forEach(s => s.classList.remove('active'));
       document.getElementById('day-' + day).classList.add('active');
