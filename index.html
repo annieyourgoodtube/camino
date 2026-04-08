@@ -7,37 +7,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --parchment: #f9f4ec;
-  --parchment-dark: #ede5d5;
-  --ink: #1e1a14;
-  --ink-soft: #4a4035;
-  --ink-muted: #9a8f7e;
-  --pilgrim-red: #9b2335;
-  --pilgrim-red-soft: #f5e8ea;
-  --camino-gold: #b07d2a;
-  --camino-gold-soft: #fdf3e0;
-  --forest: #2d5a3d;
-  --forest-soft: #e6f0e9;
-  --sea: #1a4a6e;
-  --sea-soft: #e4eef7;
-  --stone: #6b6355;
-  --border: #d4c9b5;
-  --shadow-warm: 0 4px 24px rgba(30,26,20,0.10);
+  --parchment: #ffffff;
+  --parchment-dark: #f0f0f0;
+  --ink: #222222;
+  --ink-soft: #333333;
+  --ink-muted: #444444;
+  --pilgrim-red: #c0392b;
+  --pilgrim-red-soft: #fdecea;
+  --camino-gold: #c0860a;
+  --camino-gold-soft: #fff8e1;
+  --forest: #1e7a46;
+  --forest-soft: #e8f8ee;
+  --sea: #1565c0;
+  --sea-soft: #e3f2fd;
+  --stone: #555555;
+  --border: #dddddd;
+  --shadow-warm: 0 4px 24px rgba(0,0,0,0.08);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: 'Noto Sans TC', sans-serif;
-  background: var(--parchment);
-  color: var(--ink);
+  background: #f7f7f7;
+  color: #222222;
   min-height: 100vh;
+  font-size: 16px;
 }
 
 /* ══ Header ══ */
 .site-header {
-  background: var(--ink);
-  color: var(--parchment);
+  background: #1565c0;
+  color: #ffffff;
   text-align: center;
   padding: 0;
   position: relative;
@@ -113,35 +114,38 @@ body {
 
 /* ══ Nav Progress Bar ══ */
 .route-nav {
-  background: var(--ink-soft);
+  background: #1565c0;
   padding: 0 16px;
   display: flex;
   overflow-x: auto;
   scrollbar-width: none;
   position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .route-nav::-webkit-scrollbar { display: none; }
 .route-btn {
   padding: 13px 18px;
   border: none; background: none;
-  color: #c0b49e;
+  color: rgba(255,255,255,0.75);
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 13px; cursor: pointer;
   white-space: nowrap;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
   transition: all .2s;
   display: flex; align-items: center; gap: 6px;
+  font-weight: 500;
 }
-.route-btn:hover { color: var(--parchment); }
-.route-btn.active { color: var(--camino-gold); border-bottom-color: var(--camino-gold); }
+.route-btn:hover { color: #ffffff; }
+.route-btn.active { color: #ffffff; border-bottom-color: #ffcc02; font-weight: 700; }
 .route-btn .day-num {
-  font-size: 10px; background: rgba(176,125,42,0.25);
-  color: var(--camino-gold); padding: 1px 6px; border-radius: 10px;
+  font-size: 11px; background: rgba(255,255,255,0.2);
+  color: #ffffff; padding: 2px 7px; border-radius: 10px; font-weight: 600;
 }
-.route-btn.active .day-num { background: rgba(176,125,42,0.5); }
+.route-btn.active .day-num { background: #ffcc02; color: #1565c0; }
 
 /* ══ Overview strip ══ */
 .overview-strip {
+  background: #ffffff;
   background: var(--parchment-dark);
   border-bottom: 1px solid var(--border);
   padding: 14px 20px;
@@ -152,7 +156,7 @@ body {
 .overview-strip::-webkit-scrollbar { display: none; }
 .strip-stat { text-align: center; white-space: nowrap; flex-shrink: 0; }
 .strip-stat .sv { font-family: 'Lora', serif; font-size: 22px; color: var(--pilgrim-red); }
-.strip-stat .sl { font-size: 11px; color: var(--ink-muted); margin-top: 1px; }
+.strip-stat .sl { font-size: 12px; color: #444444; margin-top: 1px; font-weight: 500; }
 
 /* ══ Main Content ══ */
 .main { max-width: 860px; margin: 0 auto; padding: 24px 16px 60px; }
@@ -249,9 +253,9 @@ body {
 .tl-header { display: flex; align-items: flex-start; gap: 10px; }
 .tl-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
 .tl-body { flex: 1; }
-.tl-name { font-size: 14px; font-weight: 500; color: var(--ink); }
-.tl-note { font-size: 12px; color: var(--ink-muted); margin-top: 2px; line-height: 1.5; }
-.tl-time { font-size: 11px; color: var(--ink-muted); flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.tl-name { font-size: 15px; font-weight: 600; color: #1a1a1a; }
+.tl-note { font-size: 13px; color: #333333; margin-top: 3px; line-height: 1.6; }
+.tl-time { font-size: 13px; color: #333333; font-weight: 600; flex-shrink: 0; font-variant-numeric: tabular-nums; }
 
 .tl-map-link {
   display: none; /* hidden - replaced by right button */
@@ -294,6 +298,7 @@ body {
 
 /* ══ Hotel Card ══ */
 .hotel-card {
+  background: #ffffff;
   background: var(--pilgrim-red-soft);
   border: 1px solid #e8c0c5;
   border-radius: 12px;
@@ -302,9 +307,9 @@ body {
   display: flex; gap: 16px; align-items: flex-start;
 }
 .hotel-icon { font-size: 28px; flex-shrink: 0; }
-.hotel-name { font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: var(--pilgrim-red); }
-.hotel-location { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
-.hotel-desc { font-size: 13px; color: var(--ink-muted); margin-top: 6px; line-height: 1.6; }
+.hotel-name { font-family: 'Lora', serif; font-size: 18px; font-weight: 600; color: #9b2335; }
+.hotel-location { font-size: 14px; color: #333333; margin-top: 2px; font-weight: 500; }
+.hotel-desc { font-size: 14px; color: #333333; margin-top: 6px; line-height: 1.7; }
 .hotel-map-btn {
   display: inline-flex; align-items: center; gap: 5px;
   background: var(--pilgrim-red); color: #fff;
@@ -330,7 +335,7 @@ body {
   text-transform: uppercase; margin-bottom: 4px;
 }
 .supply-card .sc-name { font-size: 14px; font-weight: 500; }
-.supply-card .sc-detail { font-size: 12px; color: var(--ink-muted); margin-top: 3px; }
+.supply-card .sc-detail { font-size: 13px; color: #444444; margin-top: 3px; }
 .supply-card a {
   display: inline-block; margin-top: 8px;
   font-size: 11px; color: var(--forest);
@@ -342,7 +347,7 @@ body {
 
 /* ══ Tip Box ══ */
 .tip-box {
-  background: var(--camino-gold-soft);
+  background: #fffde7;
   border-left: 3px solid var(--camino-gold);
   border-radius: 0 8px 8px 0;
   padding: 12px 16px;
@@ -382,7 +387,7 @@ body {
 }
 .trail-dot.done { background: var(--camino-gold); border-color: var(--camino-gold); }
 .trail-dot.current { background: var(--pilgrim-red); border-color: var(--pilgrim-red); box-shadow: 0 0 0 4px rgba(155,35,53,0.2); }
-.trail-label { font-size: 10px; color: var(--ink-muted); margin-top: 4px; text-align: center; }
+.trail-label { font-size: 11px; color: #333333; margin-top: 4px; text-align: center; font-weight: 500; }
 .trail-label.current { color: var(--pilgrim-red); font-weight: 500; }
 .trail-line {
   flex: 1; height: 2px;
@@ -401,8 +406,8 @@ body {
   margin-bottom: 16px;
 }
 .stamp-section .ss-title {
-  font-size: 13px; font-weight: 500;
-  color: var(--sea); margin-bottom: 10px;
+  font-size: 14px; font-weight: 700;
+  color: #0d47a1; margin-bottom: 10px;
   display: flex; align-items: center; gap: 6px;
 }
 .stamp-item {
@@ -421,21 +426,22 @@ body {
 .stamp-num.gold { background: var(--camino-gold); }
 .stamp-num.green { background: var(--forest); }
 .stamp-info { flex: 1; }
-.stamp-name { font-size: 14px; font-weight: 500; }
-.stamp-where { font-size: 12px; color: var(--ink-muted); margin-top: 1px; }
-.stamp-req { font-size: 11px; color: var(--pilgrim-red); margin-top: 2px; font-weight: 500; }
+.stamp-name { font-size: 15px; font-weight: 600; }
+.stamp-where { font-size: 13px; color: #333333; margin-top: 2px; }
+.stamp-req { font-size: 13px; color: #b71c1c; margin-top: 2px; font-weight: 600; }
 
 
 /* ══ Info Cards (breakfast / hours / toilet) ══ */
 .info-card {
-  background: var(--white);
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius, 12px);
   overflow: hidden;
   margin-bottom: 14px;
 }
 .info-card-title {
-  background: var(--parchment-dark);
+  background: #dce8ff;
+  color: #0d47a1; font-weight: 700;
   padding: 9px 16px;
   font-size: 12px; font-weight: 500;
   color: var(--ink-soft);
@@ -444,20 +450,20 @@ body {
 }
 .info-row {
   display: flex; align-items: flex-start;
-  padding: 9px 16px;
-  border-bottom: 1px solid #f5f5f5;
-  gap: 10px; font-size: 13px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #eeeeee;
+  gap: 10px; font-size: 14px;
 }
 .info-row:last-child { border-bottom: none; }
 .info-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
-.info-label { color: var(--ink-muted); min-width: 80px; flex-shrink: 0; }
+.info-label { color: #333333; min-width: 80px; flex-shrink: 0; font-weight: 500; }
 .info-val { color: var(--ink); flex: 1; line-height: 1.5; }
 .info-val strong { color: var(--pilgrim-red); }
 .info-val em { color: var(--forest); font-style: normal; font-weight: 500; }
 .info-val s { color: var(--ink-muted); font-size: 11px; }
-.badge-open { display:inline-block; background:#e6f0e9; color:var(--forest); font-size:10px; padding:1px 7px; border-radius:10px; margin-left:4px; font-weight:500; }
-.badge-warn { display:inline-block; background:#fdf3e0; color:var(--camino-gold); font-size:10px; padding:1px 7px; border-radius:10px; margin-left:4px; font-weight:500; }
-.badge-paid { display:inline-block; background:#f5e8ea; color:var(--pilgrim-red); font-size:10px; padding:1px 7px; border-radius:10px; margin-left:4px; font-weight:500; }
+.badge-open { display:inline-block; background:#c8f0d8; color:#1b5e20; font-size:12px; padding:2px 8px; border-radius:10px; margin-left:4px; font-weight:600; }
+.badge-warn { display:inline-block; background:#fff3cd; color:#7f4f00; font-size:12px; padding:2px 8px; border-radius:10px; margin-left:4px; font-weight:600; }
+.badge-paid { display:inline-block; background:#ffd5d5; color:#7f0000; font-size:12px; padding:2px 8px; border-radius:10px; margin-left:4px; font-weight:600; }
 
 
 /* ══ Packing Page ══ */
@@ -497,6 +503,7 @@ body {
 .pack-prog-text { font-size: 12px; color: var(--ink-muted); white-space: nowrap; }
 .pack-cat-block { margin-bottom: 24px; break-inside: avoid; }
 .pack-cat-heading {
+  color: #1565c0;
   background: var(--ink-soft); color: #fff;
   font-size: 12px; font-weight: 500; letter-spacing: 1px;
   padding: 6px 14px; border-radius: 6px;
@@ -524,8 +531,8 @@ body {
 .pack-li.checked .pack-li-box { background: var(--forest); border-color: var(--forest); }
 .pack-li-ico { font-size: 14px; flex-shrink: 0; }
 .pack-li-body { flex: 1; }
-.pack-li-name { font-size: 13px; }
-.pack-li-note { font-size: 11px; color: var(--ink-muted); }
+.pack-li-name { font-size: 14px; }
+.pack-li-note { font-size: 12px; color: #444444; }
 .pack-li-star { font-size: 9px; color: var(--pilgrim-red); flex-shrink: 0; }
 @media (max-width: 600px) {
   .pack-print-page { padding: 16px 16px 60px; }
@@ -537,7 +544,8 @@ body {
   .pack-print-page { padding: 0; }
   .site-header, .site-footer { display: none !important; }
   .pack-cols { grid-template-columns: 1fr 1fr; }
-  .pack-cat-heading { background: #333 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pack-cat-heading {
+  color: #1565c0; background: #333 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 
 /* ══ Footer ══ */
@@ -592,7 +600,8 @@ body {
   .route-btn .day-num { display: none; }
 
   /* ── Stats strip ── */
-  .overview-strip { gap: 18px; padding: 10px 16px; }
+  .overview-strip {
+  background: #ffffff; gap: 18px; padding: 10px 16px; }
   .strip-stat .sv { font-size: 18px; }
   .strip-stat .sl { font-size: 10px; }
 
@@ -623,7 +632,8 @@ body {
   .tl-map-btn { width: 32px; height: 32px; font-size: 14px; }
 
   /* ── Hotel card ── */
-  .hotel-card { flex-direction: column; gap: 8px; padding: 14px 14px; }
+  .hotel-card {
+  background: #ffffff; flex-direction: column; gap: 8px; padding: 14px 14px; }
   .hotel-name { font-size: 15px; }
   .hotel-desc { font-size: 12px; }
 
@@ -656,9 +666,10 @@ body {
   .pack-print-header { flex-direction: column; align-items: flex-start; gap: 10px; }
   .pack-print-title { font-size: 18px; }
   .pack-li { padding: 9px 6px; }
-  .pack-li-name { font-size: 13px; }
+  .pack-li-name { font-size: 14px; }
   .pack-li-box { width: 20px; height: 20px; }
-  .pack-cat-heading { font-size: 11px; padding: 6px 12px; }
+  .pack-cat-heading {
+  color: #1565c0; font-size: 11px; padding: 6px 12px; }
 
   /* ── Footer ── */
   .site-footer { padding: 20px 16px; }
@@ -692,6 +703,9 @@ body {
   <a class="route-btn" href="https://www.google.com/maps/d/edit?mid=1cWnvu-wNOrBtjbZdWhs0kJJQ2lfeSl4&usp=sharing" target="_blank" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">
     🗺️ 中央之路地圖
   </a>
+  <button class="route-btn" data-day="expense">
+    💸 旅費記帳
+  </button>
   <button class="route-btn" data-day="cost">
     💰 住宿費用
   </button>
@@ -732,6 +746,71 @@ body {
 
 <!-- Main -->
 
+  <!-- ═══ EXPENSE PAGE ═══ -->
+  <div id="expensePage" style="display:none; padding:20px 16px 80px;">
+    <div style="max-width:600px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="font-family:'Lora',serif; font-size:22px; font-weight:600; color:var(--ink);">💸 旅費記帳</div>
+        <div style="font-size:13px; color:var(--ink-muted); margin-top:4px;">Annie & Kevin · 每日花費紀錄</div>
+      </div>
+
+      <!-- 日期選擇 -->
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;">
+        <button onclick="switchExpenseDay('0')" id="exp-btn-0" class="exp-day-btn active">10/17<br><small>抵達日</small></button>
+        <button onclick="switchExpenseDay('1')" id="exp-btn-1" class="exp-day-btn">10/18<br><small>Day 1</small></button>
+        <button onclick="switchExpenseDay('2')" id="exp-btn-2" class="exp-day-btn">10/19<br><small>Day 2</small></button>
+        <button onclick="switchExpenseDay('3')" id="exp-btn-3" class="exp-day-btn">10/20<br><small>Day 3</small></button>
+        <button onclick="switchExpenseDay('4')" id="exp-btn-4" class="exp-day-btn">10/21<br><small>Day 4</small></button>
+        <button onclick="switchExpenseDay('5')" id="exp-btn-5" class="exp-day-btn">10/22<br><small>Day 5</small></button>
+        <button onclick="switchExpenseDay('6')" id="exp-btn-6" class="exp-day-btn">10/23<br><small>Day 6</small></button>
+        <button onclick="switchExpenseDay('all')" id="exp-btn-all" class="exp-day-btn">📊<br><small>全部</small></button>
+      </div>
+
+      <!-- 輸入區 -->
+      <div id="expenseInputArea" style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:16px; margin-bottom:14px;">
+        <div style="font-size:13px; font-weight:600; color:var(--ink); margin-bottom:12px;">➕ 新增花費</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:flex-end;">
+          <div style="flex:2; min-width:140px;">
+            <div style="font-size:11px; color:var(--ink-muted); margin-bottom:4px;">品項</div>
+            <input id="expItemName" type="text" placeholder="例：午餐、咖啡、紀念品…" maxlength="30"
+              style="width:100%; padding:10px 12px; border:1.5px solid #90caf9; border-radius:8px; font-size:14px; font-family:inherit; outline:none; box-sizing:border-box;"
+              onkeydown="if(event.key==='Enter') addExpense()">
+          </div>
+          <div style="flex:1; min-width:100px;">
+            <div style="font-size:11px; color:var(--ink-muted); margin-bottom:4px;">金額 (€)</div>
+            <input id="expItemPrice" type="number" placeholder="0.00" min="0" step="0.5"
+              style="width:100%; padding:10px 12px; border:1.5px solid #90caf9; border-radius:8px; font-size:14px; font-family:inherit; outline:none; box-sizing:border-box;"
+              onkeydown="if(event.key==='Enter') addExpense()">
+          </div>
+          <div style="min-width:80px;">
+            <div style="font-size:11px; color:transparent; margin-bottom:4px;">　</div>
+            <button onclick="addExpense()"
+              style="width:100%; padding:10px 12px; background:var(--pilgrim-red); color:#fff; border:none; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer;">
+              新增
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 記帳列表 -->
+      <div id="expenseList"></div>
+
+      <!-- 總計 -->
+      <div id="expenseTotalBox" style="background:#1565c0; color:#ffffff; border-radius:14px; padding:20px; margin-top:8px; text-align:center; display:none;">
+        <div style="font-size:13px; opacity:0.7; margin-bottom:6px;" id="expenseTotalLabel">今日花費總計</div>
+        <div style="font-family:'Lora',serif; font-size:36px; font-weight:600; color:var(--camino-gold);" id="expenseTotalAmt">€ 0.00</div>
+        <div style="font-size:12px; opacity:0.6; margin-top:6px;" id="expenseTotalTWD"></div>
+      </div>
+
+      <!-- 清除按鈕 -->
+      <div style="text-align:center; margin-top:12px;">
+        <button onclick="clearExpenses()" style="background:none; border:1px solid var(--border); border-radius:8px; padding:8px 20px; font-size:12px; color:var(--ink-muted); cursor:pointer;">
+          🗑️ 清除今日記錄
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══ COST PAGE ═══ -->
   <div id="costPage" style="display:none; padding:20px 16px 80px;">
     <div style="max-width:600px; margin:0 auto;">
@@ -744,7 +823,7 @@ body {
       <div id="costCards"></div>
 
       <!-- 總計 -->
-      <div style="background:var(--ink); color:var(--parchment); border-radius:14px; padding:20px; margin-top:8px; text-align:center;">
+      <div style="background:#1565c0; color:#ffffff; border-radius:14px; padding:20px; margin-top:8px; text-align:center;">
         <div style="font-size:13px; opacity:0.7; margin-bottom:6px;">7 晚住宿總計</div>
         <div style="font-family:'Lora',serif; font-size:32px; font-weight:600; color:var(--camino-gold);">TWD 27,729</div>
         <div style="font-size:12px; opacity:0.6; margin-top:6px;">平均每晚約 TWD 3,961</div>
@@ -996,8 +1075,8 @@ body {
     <div class="tip-box">
       <strong>🌙 今晚睡前清單：</strong> ① 背包整理完畢 ② 朝聖者護照已取得 ③ 兩天行動糧已備妥 ④ 手機與行動電源充飽電 ⑤ 明天行走鞋已準備好
     </div>
-    <div class="tip-box" style="background:#e6f0e9; border-left-color:#2d5a3d;">
-      <strong style="color:#2d5a3d;">🧺 今晚洗衣提醒：</strong> 公寓內有洗衣機，直接使用！若需外出：<strong>Lavalux Tui</strong>（Av. da Concordia 85）步行約8分鐘，每天 08:30–23:30 開放。
+    <div class="tip-box" style="background:#e6f0e9; border-left-color:#1b5e20;">
+      <strong style="color:#1b5e20;">🧺 今晚洗衣提醒：</strong> 公寓內有洗衣機，直接使用！若需外出：<strong>Lavalux Tui</strong>（Av. da Concordia 85）步行約8分鐘，每天 08:30–23:30 開放。
     </div>
   </section>
 
@@ -2291,7 +2370,7 @@ body {
       <div class="trail-stop"><div class="trail-dot current"></div><div class="trail-label current" style="color:var(--pilgrim-red);font-weight:700">🏆 Santiago Santiago<br>FINISH!</div></div>
     </div>
 
-    <div class="day-hero" style="background: linear-gradient(135deg, #1e1a14 0%, #4a2020 100%);">
+    <div class="day-hero" style="background: linear-gradient(135deg, #c0392b 0%, #1565c0 100%);">
       <div class="day-hero-eyebrow">10月23日（五）· Day 6 | Final Day | Padrón → Santiago</div>
       <div class="day-hero-route">Padrón → Santiago 🏆</div>
       <div class="day-hero-meta">
@@ -2574,7 +2653,7 @@ body {
 
 <!-- Footer -->
 <footer class="site-footer">
-  <div class="footer-camino">✦ Camino Portugués Central 2026 · 圖伊 → 聖地牙哥 · 約 123km · Buen Camino! 🐚 ✦</div>
+  <div class="footer-camino">✦ Camino Portugués Central 2026 · Tui → Santiago de Compostela · 123km · Buen Camino! 🐚 ✦</div>
   <div class="footer-maker">Annie Hsu 製作</div>
   <div style="margin-top:8px">
     <span class="footer-line">
@@ -2768,11 +2847,11 @@ document.querySelectorAll('.day-section').forEach(section => {
   const mapUrl = `https://www.google.com/maps/d/viewer?mid=1cWnvu-wNOrBtjbZdWhs0kJJQ2lfeSl4&ll=${info.ll}&z=${info.z}`;
 
   const navTipHTML = `
-  <div style="margin-bottom:16px; border-radius:12px; overflow:hidden; border:1px solid #b8d4e8; box-shadow:0 2px 12px rgba(30,26,20,0.08);">
+  <div style="margin-bottom:16px; border-radius:12px; overflow:hidden; border:1px solid #90caf9; box-shadow:0 2px 12px rgba(30,26,20,0.08);">
     <div style="background:#1a4a6e; color:#fff; padding:10px 16px; font-size:13px; font-weight:500;">
       🧭 今日導航三步驟
     </div>
-    <div style="background:#e8f4fd; padding:14px 16px; font-size:13px; line-height:2;">
+    <div style="background:#e3f2fd; padding:14px 16px; font-size:14px; line-height:2.2; color:#0d47a1;">
       <div>① <strong>跟著黃色箭頭 ➜</strong> — 全段每隔幾百公尺就有路標，最可靠</div>
       <div>② <strong>Wise Pilgrim App</strong> — 離線也能用，顯示標準朝聖路線</div>
       <div>③ <strong>確認大方向</strong> — 點下方按鈕，地圖自動定位到今日起點</div>
@@ -2878,13 +2957,13 @@ function renderCostPage() {
         <div style="margin-top:8px; font-size:12px; color:var(--ink-muted); background:var(--parchment); border-radius:8px; padding:8px 10px; line-height:1.6;">
           ✨ ${item.features}
         </div>
-        <div style="margin-top:6px; font-size:12px; background:#fdf3e0; color:#5a3e00; border-radius:8px; padding:8px 10px; line-height:1.6;">
+        <div style="margin-top:6px; font-size:12px; background:#fdf3e0; color:#3e1f00; border-radius:8px; padding:8px 10px; line-height:1.6;">
           ☕ <strong>早餐：</strong>${item.breakfast}
         </div>
-        <div style="margin-top:6px; font-size:12px; background:#f5e8ea; color:#6b1020; border-radius:8px; padding:8px 10px; line-height:1.6;">
+        <div style="margin-top:6px; font-size:12px; background:#f5e8ea; color:#7f0000; border-radius:8px; padding:8px 10px; line-height:1.6;">
           ${item.dinner}
         </div>
-        <div style="margin-top:6px; font-size:12px; background:#e6f0e9; color:#2d5a3d; border-radius:8px; padding:8px 10px; line-height:1.6;">
+        <div style="margin-top:6px; font-size:12px; background:#e6f0e9; color:#1b5e20; border-radius:8px; padding:8px 10px; line-height:1.6;">
           ${item.laundry}
         </div>
       </div>
@@ -2892,6 +2971,134 @@ function renderCostPage() {
   });
   container.innerHTML = html;
 }
+
+// ═══════════════════════════════
+// EXPENSE TRACKER
+// ═══════════════════════════════
+const expDayLabels = {
+  '0': '10/17 抵達日', '1': '10/18 Day 1 Tui→Vilaboa',
+  '2': '10/19 Day 2 Vilaboa→Redondela', '3': '10/20 Day 3 Redondela→Pontevedra',
+  '4': '10/21 Day 4 Pontevedra→Caldas', '5': '10/22 Day 5 Caldas→Padrón',
+  '6': '10/23 Day 6 Padrón→Santiago'
+};
+let currentExpDay = '0';
+let expData = {};
+try { expData = JSON.parse(localStorage.getItem('expData') || '{}'); } catch(e) {}
+
+function saveExp() {
+  try { localStorage.setItem('expData', JSON.stringify(expData)); } catch(e) {}
+}
+
+function switchExpenseDay(day) {
+  currentExpDay = day;
+  document.querySelectorAll('.exp-day-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('exp-btn-' + day);
+  if (btn) btn.classList.add('active');
+  const inputArea = document.getElementById('expenseInputArea');
+  if (inputArea) inputArea.style.display = day === 'all' ? 'none' : 'block';
+  renderExpenses();
+}
+
+function addExpense() {
+  const name = document.getElementById('expItemName').value.trim();
+  const price = parseFloat(document.getElementById('expItemPrice').value);
+  if (!name || isNaN(price) || price < 0) return;
+  if (!expData[currentExpDay]) expData[currentExpDay] = [];
+  expData[currentExpDay].push({ name, price, id: Date.now() });
+  saveExp();
+  document.getElementById('expItemName').value = '';
+  document.getElementById('expItemPrice').value = '';
+  document.getElementById('expItemName').focus();
+  renderExpenses();
+}
+
+function deleteExpense(day, id) {
+  if (!expData[day]) return;
+  expData[day] = expData[day].filter(i => i.id !== id);
+  saveExp();
+  renderExpenses();
+}
+
+function clearExpenses() {
+  if (currentExpDay === 'all') return;
+  if (!confirm('確定清除今日所有記錄？')) return;
+  expData[currentExpDay] = [];
+  saveExp();
+  renderExpenses();
+}
+
+function renderExpenses() {
+  const list = document.getElementById('expenseList');
+  const totalBox = document.getElementById('expenseTotalBox');
+  const totalAmt = document.getElementById('expenseTotalAmt');
+  const totalLabel = document.getElementById('expenseTotalLabel');
+  const totalTWD = document.getElementById('expenseTotalTWD');
+  if (!list) return;
+
+  if (currentExpDay === 'all') {
+    // Show all days summary
+    let html = '';
+    let grandTotal = 0;
+    Object.keys(expDayLabels).forEach(day => {
+      const items = expData[day] || [];
+      const dayTotal = items.reduce((s, i) => s + i.price, 0);
+      grandTotal += dayTotal;
+      html += `<div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px 16px; margin-bottom:10px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:${items.length ? '10px' : '0'};">
+          <div style="font-size:13px; font-weight:600; color:var(--ink);">${expDayLabels[day]}</div>
+          <div style="font-size:16px; font-weight:700; color:var(--camino-gold);">€ ${dayTotal.toFixed(2)}</div>
+        </div>
+        ${items.map(item => `
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--ink-muted); padding:3px 0; border-top:1px solid #f5f5f5;">
+            <span>${item.name}</span><span>€ ${item.price.toFixed(2)}</span>
+          </div>`).join('')}
+      </div>`;
+    });
+    list.innerHTML = html;
+    totalBox.style.display = 'block';
+    totalLabel.textContent = '7天總花費（不含住宿）';
+    totalAmt.textContent = '€ ' + grandTotal.toFixed(2);
+    totalTWD.textContent = '約 TWD ' + Math.round(grandTotal * 35).toLocaleString() + '（以 1€ ≈ 35 TWD 換算）';
+  } else {
+    const items = expData[currentExpDay] || [];
+    const dayTotal = items.reduce((s, i) => s + i.price, 0);
+    if (items.length === 0) {
+      list.innerHTML = '<div style="text-align:center; padding:24px; color:var(--ink-muted); font-size:13px;">還沒有記錄，新增今日第一筆花費！</div>';
+      totalBox.style.display = 'none';
+    } else {
+      list.innerHTML = `<div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:10px;">
+        <div style="background:var(--parchment-dark); padding:9px 16px; font-size:12px; font-weight:500; color:var(--ink-soft);">
+          ${expDayLabels[currentExpDay]} · ${items.length} 筆記錄
+        </div>
+        ${items.map(item => `
+          <div style="display:flex; align-items:center; padding:11px 16px; border-bottom:1px solid #f5f5f5; gap:10px;">
+            <div style="flex:1; font-size:14px; color:var(--ink);">${item.name}</div>
+            <div style="font-size:15px; font-weight:600; color:var(--camino-gold); min-width:70px; text-align:right;">€ ${item.price.toFixed(2)}</div>
+            <button onclick="deleteExpense('${currentExpDay}', ${item.id})"
+              style="background:none; border:none; color:#ccc; font-size:18px; cursor:pointer; padding:0 4px; line-height:1;">✕</button>
+          </div>`).join('')}
+      </div>`;
+      totalBox.style.display = 'block';
+      totalLabel.textContent = expDayLabels[currentExpDay] + ' 花費總計';
+      totalAmt.textContent = '€ ' + dayTotal.toFixed(2);
+      totalTWD.textContent = '約 TWD ' + Math.round(dayTotal * 35).toLocaleString() + '（以 1€ ≈ 35 TWD 換算）';
+    }
+  }
+}
+
+// Add expense CSS
+const expStyle = document.createElement('style');
+expStyle.textContent = `.exp-day-btn {
+  flex:1; min-width:52px; padding:8px 6px; border:1.5px solid var(--border);
+  border-radius:10px; background:#fff; font-size:11px; font-weight:500;
+  color:var(--ink-soft); cursor:pointer; text-align:center; line-height:1.4;
+  transition: all 0.15s;
+}
+.exp-day-btn.active {
+  background:var(--pilgrim-red); color:#fff; border-color:var(--pilgrim-red);
+}
+.exp-day-btn small { font-size:9px; opacity:0.85; }`;
+document.head.appendChild(expStyle);
 
 // Tab navigation
 document.querySelectorAll('.route-btn[data-day]').forEach(btn => {
@@ -2906,6 +3113,14 @@ document.querySelectorAll('.route-btn[data-day]').forEach(btn => {
       document.getElementById('costPage').style.display = 'none';
       document.querySelector('.main').style.padding = '0';
       renderPackPage();
+    } else if (day === 'expense') {
+      document.querySelectorAll('.day-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('packingPage').style.display = 'none';
+      document.getElementById('costPage').style.display = 'none';
+      document.getElementById('expensePage').style.display = 'block';
+      document.querySelector('.main').style.padding = '0';
+      switchExpenseDay('all');
+      renderExpenses();
     } else if (day === 'cost') {
       document.querySelectorAll('.day-section').forEach(s => s.classList.remove('active'));
       document.getElementById('packingPage').style.display = 'none';
@@ -2915,6 +3130,7 @@ document.querySelectorAll('.route-btn[data-day]').forEach(btn => {
     } else {
       document.getElementById('packingPage').style.display = 'none';
       document.getElementById('costPage').style.display = 'none';
+      document.getElementById('expensePage').style.display = 'none';
       document.querySelector('.main').style.padding = '';
       document.querySelectorAll('.day-section').forEach(s => s.classList.remove('active'));
       document.getElementById('day-' + day).classList.add('active');
