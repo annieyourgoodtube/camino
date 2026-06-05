@@ -43,11 +43,11 @@ body {
   padding: 0;
   position: relative;
   overflow: hidden;
-  min-height: 420px;
+  min-height: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .site-header::before {
   content: '';
@@ -60,10 +60,10 @@ body {
   position: absolute; inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10,8,5,0.25) 0%,
-    rgba(10,8,5,0.10) 40%,
-    rgba(10,8,5,0.72) 75%,
-    rgba(10,8,5,0.90) 100%
+    rgba(10,8,5,0.62) 0%,
+    rgba(10,8,5,0.42) 26%,
+    rgba(10,8,5,0.14) 52%,
+    rgba(10,8,5,0) 100%
   );
   z-index: 1;
 }
@@ -114,9 +114,10 @@ body {
 /* ══ Nav Progress Bar ══ */
 .route-nav {
   background: #0d2d6e;
-  padding: 0 16px;
-  display: flex;
-  overflow-x: auto;
+  padding: 4px 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
   scrollbar-width: none;
   position: sticky; top: 0; z-index: 100;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
@@ -128,10 +129,10 @@ body {
   color: rgba(255,255,255,0.75);
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 13px; cursor: pointer;
-  white-space: nowrap;
-  border-bottom: 3px solid transparent;
+  white-space: normal; text-align: center; line-height: 1.3;
+  border-bottom: 3px solid transparent; border-radius: 8px;
   transition: all .2s;
-  display: flex; align-items: center; gap: 6px;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
   font-weight: 500;
 }
 .route-btn:hover { color: #ffffff; }
@@ -634,7 +635,7 @@ body {
 @media (max-width: 700px) {
 
   /* ── Header ── */
-  .site-header { min-height: 300px; }
+  .site-header { min-height: 250px; }
   .site-header .header-inner { padding: 20px 16px 20px; }
   .header-title { font-size: clamp(18px, 5.5vw, 26px); white-space: normal; line-height: 1.25; }
   .header-poem { font-size: 13px; }
@@ -743,7 +744,6 @@ body {
     <div class="header-subtitle" style="font-size:13px; letter-spacing:2px; opacity:0.85; margin-top:6px; font-family:'Lora',serif;">Camino Portugués Central & Variante Espiritual 2026</div>
     <div class="header-poem">在風與陽光之間，完成一場與靈魂的相遇。</div>
     <div class="header-sub">葡萄牙 Porto → 西班牙 聖地牙哥 · 10月15日–23日 · 約 188 km</div>
-    <div class="shell-divider">✦ 🐚 ✦</div>
   </div>
 </header>
 
@@ -1219,8 +1219,8 @@ body {
       <!-- 總計 -->
       <div style="background:#1565c0; color:#ffffff; border-radius:14px; padding:20px; margin-top:8px; text-align:center;">
         <div style="font-size:13px; opacity:0.7; margin-bottom:6px;">8 晚住宿總計（含Porto）</div>
-        <div style="font-family:'Lora',serif; font-size:32px; font-weight:600; color:var(--camino-gold);">TWD 23,559</div>
-        <div style="font-size:12px; opacity:0.6; margin-top:6px;">平均每晚約 TWD 2,945（含 Centre Esplai 預估 €46，實際金額待補）</div>
+        <div style="font-family:'Lora',serif; font-size:32px; font-weight:600; color:var(--camino-gold);">TWD 24,465</div>
+        <div style="font-size:12px; opacity:0.6; margin-top:6px;">平均每晚約 TWD 3,058（含 Centre Esplai €71.60）</div>
       </div>
 
       <div style="background:var(--parchment-dark); border-radius:12px; padding:14px 16px; margin-top:12px; font-size:12px; color:var(--ink-muted); line-height:1.8;">
@@ -3866,7 +3866,7 @@ body {
         <div class="hotel-desc">10/23 傍晚飛離 Santiago、隔天一早 06:10 從 BCN 起飛，今晚住在巴塞隆納機場旁的青年旅館 Centre Esplai。<br>
         ✅ <strong>適合早班機：</strong>24 小時櫃台；<strong>07:00 前出發可領免費外帶早餐</strong>（剛好配合 06:10 班機）。<br>
         🚌 <strong>交通：</strong>距 El Prat 機場約 3km，旅館可協助安排接駁／計程車，<strong>務必先和櫃台確認清晨往機場的時段</strong>。<br>
-        🛏️ 現代環保建築，有單人／雙人房與宿舍房，含早餐雙人房約 €46 起。</div>
+        🛏️ 現代環保建築，有單人／雙人房與宿舍房；<strong>本次已訂 €71.60（約 TWD 2,506）</strong>。</div>
         <a class="hotel-map-btn" style="background:#1565c0;" href="https://www.google.com/maps/search/Centre+Esplai+Albergue+El+Prat+de+Llobregat" target="_blank">📍 Google 地圖導航</a>
       </div>
     </div>
@@ -4334,9 +4334,9 @@ const costData = [
     laundry: '🧺 入住時詢問民宿是否有洗衣設備｜或昨晚在 Vilanova 公寓已洗好，今天輕鬆！',
   },
   {
-    day: 'Day 7', date: '10/23', status: '✅ 已訂（金額待補）',
-    hotel: 'Centre Esplai Albergue（巴塞隆納機場）', location: 'C/ Riu Anoia 42-54, El Prat de Llobregat（距 BCN 機場約 3km）', twd: 1600, icon: '🛏️',
-    features: '巴塞隆納機場旁青年旅館，配合 10/24 06:10 早班機。24h 櫃台、07:00 前出發可領免費外帶早餐；現代環保建築，單人／雙人／宿舍房，含早雙人房約 €46 起。',
+    day: 'Day 7', date: '10/23', status: '✅ 已訂',
+    hotel: 'Centre Esplai Albergue（巴塞隆納機場）', location: 'C/ Riu Anoia 42-54, El Prat de Llobregat（距 BCN 機場約 3km）', twd: 2506, icon: '🛏️',
+    features: '巴塞隆納機場旁青年旅館，配合 10/24 06:10 早班機。24h 櫃台、07:00 前出發可領免費外帶早餐；現代環保建築，單人／雙人／宿舍房；本次已訂 €71.60（約 TWD 2,506）。',
     breakfast: '☕ 含早（視房型）；07:00 前出發可領免費外帶早餐，剛好配合 06:10 班機。',
     dinner: '🍽️ 約 20:15 抵 BCN，旅館設有餐廳供晚餐，或機場簡單用餐後早睡。',
     laundry: '🧺 過境一晚通常不需洗衣；旅館有付費洗衣服務。',
